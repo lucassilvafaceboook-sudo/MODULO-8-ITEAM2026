@@ -40,10 +40,10 @@ function App() {
   const [turmaIdProf, setTurmaIdProf] = useState('');
 
   // 2. Funções de Busca (GET)
-  const carregarAlunos = () => fetch('http://localhost:3000/api/alunos').then(res => res.json()).then(setAlunos).catch(console.error);
-  const carregarProfessores = () => fetch('http://localhost:3000/api/professores').then(res => res.json()).then(setProfessores).catch(console.error);
-  const carregarCursos = () => fetch('http://localhost:3000/api/cursos').then(res => res.json()).then(setCursos).catch(console.error);
-  const carregarTurmas = () => fetch('http://localhost:3000/api/turmas').then(res => res.json()).then(setTurmas).catch(console.error);
+  const carregarAlunos = () => fetch('https://modulo-8-iteam2026.onrender.com/api/alunos').then(res => res.json()).then(setAlunos).catch(console.error);
+  const carregarProfessores = () => fetch('https://modulo-8-iteam2026.onrender.com/api/professores').then(res => res.json()).then(setProfessores).catch(console.error);
+  const carregarCursos = () => fetch('https://modulo-8-iteam2026.onrender.com/api/cursos').then(res => res.json()).then(setCursos).catch(console.error);
+  const carregarTurmas = () => fetch('https://modulo-8-iteam2026.onrender.com/api/turmas').then(res => res.json()).then(setTurmas).catch(console.error);
 
   useEffect(() => {
     carregarAlunos();
@@ -56,7 +56,7 @@ function App() {
   const handleCadastrarAluno = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:3000/api/alunos', {
+        const response = await fetch('https://modulo-8-iteam2026.onrender.com/api/alunos', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nome: novoNome, email: novoEmail, turma_nome: novaTurma })
         });
@@ -70,7 +70,7 @@ function App() {
   const handleCadastrarProfessor = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:3000/api/professores', {
+        const response = await fetch('https://modulo-8-iteam2026.onrender.com/api/professores', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nome: profNome, email: profEmail, area: profArea })
         });
@@ -84,7 +84,7 @@ function App() {
   const handleCadastrarCurso = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:3000/api/cursos', {
+        const response = await fetch('https://modulo-8-iteam2026.onrender.com/api/cursos', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nome: cursoNome, area: cursoArea, carga_horaria: cursoCarga })
         });
@@ -98,7 +98,7 @@ function App() {
   const handleCadastrarTurma = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:3000/api/turmas', {
+        const response = await fetch('https://modulo-8-iteam2026.onrender.com/api/turmas', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
               nome_turma: turmaNome, turno: turmaTurno, periodo: turmaPeriodo, 
